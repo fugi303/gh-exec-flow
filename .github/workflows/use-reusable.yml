@@ -68,6 +68,8 @@ jobs:
     uses: ./.github/workflows/reusable-workflow.yml
     with: 
       input1: De Blah De Blah
+    secrets:
+      some-secret: ${{ secrets.SOME_SECRET }}
   report:
     needs: [lint, deploy]
     if: failure()
